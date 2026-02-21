@@ -10,13 +10,13 @@ public class RecommendationsResponse {
     private Long userId;
 
     @JsonProperty("recommendations")
-    private List<Recommendation> recommendations;
+    private List<Recommendation> recommendation;
 
     public RecommendationsResponse() {}
 
     public RecommendationsResponse(Long userId, List<Recommendation> recommendations) {
         this.userId = userId;
-        this.recommendations = recommendations;
+        this.recommendation = recommendations;
     }
 
     public Long getUserId() {
@@ -28,10 +28,10 @@ public class RecommendationsResponse {
     }
 
     public List<Recommendation> getRecommendations() {
-        return recommendations;
+        return recommendation;
     }
 
     public void setRecommendations(List<Recommendation> recommendations) {
-        this.recommendations = recommendations;
+        this.recommendation = recommendations;
     }
 }

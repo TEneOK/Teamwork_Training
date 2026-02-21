@@ -19,7 +19,7 @@ public class RecommendationController {
     }
 
     @GetMapping(value = "/{user_id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<RecommendationsResponse> getRecommendations(
+    public ResponseEntity<RecommendationsResponse> getRecommendation(
             @PathVariable("user_id") Long userId) {
 
         try {

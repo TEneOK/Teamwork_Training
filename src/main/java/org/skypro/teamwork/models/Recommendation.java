@@ -10,7 +10,7 @@ public class Recommendation {
     @JsonProperty("name")
     private String productName;
 
-    @JsonProperty("text")
+    @JsonProperty("message")
     private String description;
 
     public Recommendation() {}

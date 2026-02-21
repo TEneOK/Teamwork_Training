@@ -22,7 +22,7 @@ public class RecommendationService {
     @Cacheable(value = "recommendations", key = "#userId")
     public RecommendationsResponse getRecommendationsForUser(Long userId) {
         if (userId == null || userId <= 0) {
-            throw new IllegalArgumentException("Invalid user ID");
+            throw new IllegalArgumentException("Неправильный ID");
         }
 
         List<Recommendation> recommendations =
