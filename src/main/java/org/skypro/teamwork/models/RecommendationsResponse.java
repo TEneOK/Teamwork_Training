@@ -1,29 +1,31 @@
 package org.skypro.teamwork.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import tools.jackson.databind.deser.jdk.UUIDDeserializer;
 
 import java.util.List;
+import java.util.UUID;
 
 public class RecommendationsResponse {
 
     @JsonProperty("user_id")
-    private Long userId;
+    private UUID userId;
 
     @JsonProperty("recommendations")
     private List<Recommendation> recommendation;
 
     public RecommendationsResponse() {}
 
-    public RecommendationsResponse(Long userId, List<Recommendation> recommendations) {
+    public RecommendationsResponse(UUID userId, List<Recommendation> recommendations) {
         this.userId = userId;
         this.recommendation = recommendations;
     }
 
-    public Long getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 

@@ -2,30 +2,32 @@ package org.skypro.teamwork.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.UUID;
+
 public class Recommendation {
 
     @JsonProperty("id")
-    private Long productId;
+    private UUID productId;
 
     @JsonProperty("name")
     private String productName;
 
-    @JsonProperty("message")
+    @JsonProperty("text")
     private String description;
 
     public Recommendation() {}
 
-    public Recommendation(Long productId, String productName, String description) {
+    public Recommendation(UUID productId, String productName, String description) {
         this.productId = productId;
         this.productName = productName;
         this.description = description;
     }
 
-    public Long getProductId() {
+    public UUID getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(UUID productId) {
         this.productId = productId;
     }
 

@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class RecommendationService {
@@ -20,8 +21,8 @@ public class RecommendationService {
     }
 
     @Cacheable(value = "recommendations", key = "#userId")
-    public RecommendationsResponse getRecommendationsForUser(Long userId) {
-        if (userId == null || userId <= 0) {
+    public RecommendationsResponse getRecommendationsForUser(UUID userId) {
+        if (userId == null) {
             throw new IllegalArgumentException("Неправильный ID");
         }
 
