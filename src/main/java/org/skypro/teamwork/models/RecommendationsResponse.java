@@ -1,7 +1,6 @@
 package org.skypro.teamwork.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tools.jackson.databind.deser.jdk.UUIDDeserializer;
 
 import java.util.List;
 import java.util.UUID;
