@@ -1,11 +1,12 @@
 package org.skypro.teamwork.service;
 
-import org.skypro.teamwork.dto.DynamicRuleDto;
+import org.skypro.teamwork.models.DynamicRule;
 import org.skypro.teamwork.models.Recommendation;
 import org.skypro.teamwork.models.RecommendationsResponse;
 import org.skypro.teamwork.repository.RecommendationRepository;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -37,8 +38,8 @@ public class RecommendationService {
                 recommendationRepository.findRecommendationsForUser(userId);
         recommendations.addAll(staticRecommendations);
 
-        List<DynamicRuleDto> dynamicRules = dynamicRuleService.getAllRules();
-        for (DynamicRuleDto rule : dynamicRules) {
+        List<DynamicRule> dynamicRules = dynamicRuleService.getAllDynamicRules();
+        for (DynamicRule rule : dynamicRules) {
             if (ruleEvaluator.evaluateRule(userId, rule.getRule())) {
                 recommendations.add(new Recommendation(
                         rule.getProductId(),

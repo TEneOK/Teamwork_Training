@@ -1,3 +1,7 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/createTableRecomendationRule/createTableRecomendationRule.yaml
+      file: 001-create-dynamic-rules-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 002-create-rule-stats-table.yaml
+      relativeToChangelogFile: true
